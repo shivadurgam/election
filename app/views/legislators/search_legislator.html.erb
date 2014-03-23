@@ -1,0 +1,24 @@
+</br></br>
+<h3 style="color:green">Here is what we found for you:</br></br></h3>
+
+
+ <h4 style="color:blue">Your quey has yielded <%= pluralize(@search.count, "result") %>. </h4>
+
+<p class="one"><h5 style="color:purple"><ol><% @search.each do |f| %>
+<li>MLA Name:<%= f.name %></br>
+Age:<%= f.age %></br>
+Constituency: <%= f.constituency.name %></br>
+District: <%= f.constituency.district %></br>
+State: <%= f.constituency.state %> </br>
+Party: <%= f.party.name %> </br>
+Party president: <%= f.party.president %></br>
+Party established on: <%= f.party.established_year %></li></br>
+<% end %></ol>
+<%= @search1 %></h5></p>
+
+
+
+
+	<%= link_to 'Home', home_path %>
+
+
