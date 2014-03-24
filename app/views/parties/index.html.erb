@@ -1,0 +1,64 @@
+
+
+</br></br>
+<!--Search legislators by name:
+<%= form_tag search1_path, method: :get do %>
+<p>
+	<%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use name" %> 
+	<%= submit_tag "Search Legislators", :name => nil  %>
+</p>
+<% end %>
+
+
+
+
+<!--Search constituency by name:
+<%= form_tag search2_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use district name also" %>
+    <%= submit_tag "Search Constituency", :name => nil %>
+  </p>
+<% end %>-->
+
+
+
+Search Party by name/its president's name
+<%= form_tag search3_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search], size: 35, placeholder: "Enter any theatre name" %>
+    <%= submit_tag "Search Party", :name => nil %>
+  </p>
+  <% end %>
+</br></br>
+
+
+<h1>Parties</h1>(<%= link_to 'Create new', new_party_path %>)
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			
+			<th>Party Name</th>
+			<th>Party President</th>
+			<th>Established on</th>
+			<th>Show Details</th>
+			<th>Edit Details</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @parties.each do |f| %>
+		<tr>
+			
+			<td><%= f.name %></td>
+			<td><%= f.president %></td>
+			<td><%= f.established_year%></td>
+			<td><%= link_to ' Show  ', party_path(f) %></td>
+			<td><%= link_to ' Edit ', edit_party_path(f) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+</br></br>
+
+
+

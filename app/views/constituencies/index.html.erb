@@ -1,0 +1,47 @@
+
+</br></br>
+
+
+
+Search constituency by name:
+<%= form_tag search2_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use district name also" %>
+    <%= submit_tag "Search Constituency", :name => nil %>
+  </p>
+<% end %>
+</br>
+</br>
+
+<h1>Constituencies</h1>(<%= link_to 'Create new', new_constituency_path %>)
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Constituency Name </th>
+			<th>District </th>
+			<th>State</th>
+			<th>Show Details</th>
+			<th>Edit Details</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @cons.each do |f| %>
+		<tr>
+			<td><%= f.name %></td>
+			<td><%= f.district %></td>
+			<td><%= f.state %></td>
+			<td><%= link_to ' Show  ', constituency_path(f) %></td>
+			<td><%= link_to ' Edit ', edit_constituency_path(f) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table> 
+
+</br></br>
+
+
+
+
+
+
+

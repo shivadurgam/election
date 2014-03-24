@@ -1,36 +1,13 @@
 Election::Application.routes.draw do
  
-
-  get 'legislators' => "legislators#index", as: 'home'
+  resources :parties, :constituencies, :legislators
   
-  get 'legislators/legislator/:id' => "legislators#show_legislator", as: 'legislator'
-  get 'legislators/new' => "legislators#new_legislator", as: 'new_legislator'
-  post 'legislators/legislator' => "legislators#create_legislator", as: 'legislators'
-  get 'legislators/legislator/:id/edit' => "legislators#edit_legislator", as: 'edit_legislator'
-  patch 'legislators/legislator/:id' => "legislators#update_legislator"
-  put 'legislators/legislator/:id' => "legislators#update_legislator"
-
-  get 'legislators/constituency/:id' => "legislators#show_constituency", as: 'constituency'
-  get 'constituency/new' => "legislators#new_constituency", as: 'new_constituency'
-  post 'legislators/constituency' => "legislators#create_constituency", as: 'constituencies'
-  get 'legislators/constituency/:id/edit' => "legislators#edit_constituency", as: 'edit_constituency'
-  patch 'legislators/constituency/:id' => "legislators#update_constituency"
-  put 'legislators/constituency/:id' => "legislators#update_tconstituency"
+  get 'legislator/search' => "legislators#search", as: 'search1'
+  get 'constituency/search' => "constituencies#search", as: 'search2'
+  get 'party/search' => "parties#search", as: 'search3'
 
   
- 
-  get 'legislators/party/:id' => "legislators#show_party", as: 'party'
-  get 'party/new' => "legislators#new_party", as: 'new_party'
-  post 'legislators/party' => "legislators#create_party", as: 'parties'
-  get 'legislators/party/:id/edit' => "legislators#edit_party", as: 'edit_party'
-  patch 'legislators/party/:id' => "legislators#update_party"
-  put 'legislators/party/:id' => "legislators#update_party"
-
-
-
-  get 'legislators/search' => "legislators#search_legislator", as: 'search1'
-  get 'constituency/search' => "legislators#search_constituency", as: 'search2'
-  get 'party/search' => "legislators#search_party", as: 'search3'
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

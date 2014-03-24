@@ -1,38 +1,23 @@
 
 
- </br></br>
+</br></br>
+
 Search legislators by name:
 <%= form_tag search1_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use name" %> 
-    <%= submit_tag "Search Legislators", :name => nil  %>
-  </p>
+<p>
+	<%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use name" %> 
+	<%= submit_tag "Search Legislators", :name => nil  %>
+</p>
 <% end %>
 
 
 
 
-<!--Search constituency by name:
-<%= form_tag search2_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use district name also" %>
-    <%= submit_tag "Search Constituency", :name => nil %>
-  </p>
-<% end %>
 
-
-
-Search Party by name/its president's name
-<%= form_tag search3_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search], size: 35, placeholder: "Enter any theatre name" %>
-    <%= submit_tag "Search Party", :name => nil %>
-  </p>
-<% end %>-->
 </br></br>
 
 <h1>Legislators</h1>(<%= link_to 'Create new', new_legislator_path %>)
-<table class="table table-striped">
+<table class="table table-bordered">
 	<thead>
 		<tr>
 			<th>MLA Name </th>
@@ -42,77 +27,26 @@ Search Party by name/its president's name
 		</tr>
 	</thead>
 	<tbody>
-	
+
 		<% @legislators.each do |f| %>
-			<tr>
-				<td><%= f.name %></td>
-				<td><%= f.age %></td>
-				<td><%= link_to ' Show  ', legislator_path(f) %></td>
-				<td><%= link_to ' Edit ', edit_legislator_path(f) %></td>
-			</tr>
+		<tr>
+			<td><%= f.name %></td>
+			<td><%= f.age %></td>
+			<td><%= link_to ' Show  ', legislator_path(f) %></td>
+			<td><%= link_to ' Edit ', edit_legislator_path(f) %></td>
+		</tr>
 		<% end %>
 	</tbody>
 </table>
 
- 
 
 
 
 
 
-</br>
-
-<h1>Constituencies</h1>(<%= link_to 'Create new', new_constituency_path %>)
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th>Constituency Name </th>
-			<th>District </th>
-			<th>State</th>
-			<th>Show Details</th>
-			<th>Edit Details</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @cons.each do |f| %>
-			<tr>
-				<td><%= f.name %></td>
-				<td><%= f.district %></td>
-				<td><%= f.state %></td>
-				<td><%= link_to ' Show  ', constituency_path(f) %></td>
-				<td><%= link_to ' Edit ', edit_constituency_path(f) %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table> 
 
 </br></br>
 
-<h1>Parties</h1>(<%= link_to 'Create new', new_party_path %>)
-<table class="table table-hover">
-	<thead>
-		<tr>
-			
-			<th>Party Name</th>
-			<th>Party President</th>
-			<th>Established on</th>
-			<th>Show Details</th>
-			<th>Edit Details</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @parties.each do |f| %>
-			<tr>
-			
-			    <th><%= f.name %></th>
-			    <th><%= f.president %></th>
-			    <th><%= f.established_year%></th>
-				<td><%= link_to ' Show  ', party_path(f) %></td>
-				<td><%= link_to ' Edit ', edit_party_path(f) %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
 
 
 
