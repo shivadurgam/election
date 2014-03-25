@@ -4,7 +4,7 @@
 
 
 Search constituency by name:
-<%= form_tag search2_path, method: :get do %>
+<%= form_tag search_constituencies_path, method: :get do %>
   <p>
     <%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use district name also" %>
     <%= submit_tag "Search Constituency", :name => nil %>

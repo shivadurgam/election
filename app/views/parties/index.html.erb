@@ -1,29 +1,12 @@
 
 
 </br></br>
-<!--Search legislators by name:
-<%= form_tag search1_path, method: :get do %>
-<p>
-	<%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use name" %> 
-	<%= submit_tag "Search Legislators", :name => nil  %>
-</p>
-<% end %>
 
-
-
-
-<!--Search constituency by name:
-<%= form_tag search2_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use district name also" %>
-    <%= submit_tag "Search Constituency", :name => nil %>
-  </p>
-<% end %>-->
 
 
 
 Search Party by name/its president's name
-<%= form_tag search3_path, method: :get do %>
+<%= form_tag search_parties_path, method: :get do %>
   <p>
     <%= text_field_tag :search, params[:search], size: 35, placeholder: "Enter any theatre name" %>
     <%= submit_tag "Search Party", :name => nil %>

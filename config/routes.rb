@@ -1,14 +1,14 @@
 Election::Application.routes.draw do
  
-  resources :parties, :constituencies, :legislators
+  resources :parties, :constituencies, :legislators do
+    collection do
+      get :search
+    end
+  end
   
-  get 'legislator/search' => "legislators#search", as: 'search1'
-  get 'constituency/search' => "constituencies#search", as: 'search2'
-  get 'party/search' => "parties#search", as: 'search3'
-
+ 
   
-  
-  
+     
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
