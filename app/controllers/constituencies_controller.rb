@@ -29,16 +29,16 @@ class ConstituenciesController < ApplicationController
    if @con.update_attributes(con_params)
     redirect_to constituencies_path
   end
-  end
+end
 
-  def search
+def search
  @search = Constituency.search(params[:search])
  if @search == []
   @search1 = 'No record found'
 end
 end 
 
-  private
+private
 
 
 def con_params

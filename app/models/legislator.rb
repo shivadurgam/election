@@ -3,7 +3,7 @@ class Legislator < ActiveRecord::Base
 	belongs_to :constituency
 
 
-	def self.search(search)
+	def self.search1(search)
 		if search
 			find(:all, :conditions => ['name LIKE ?', "#{search}%"])
 			

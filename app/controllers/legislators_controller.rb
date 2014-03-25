@@ -34,7 +34,7 @@ def update
 end	
 
 def search
- @search = Legislator.search(params[:search])
+ @search = Legislator.search1(params[:search])
  if @search == []
   @search1 = 'No record found'
 end
