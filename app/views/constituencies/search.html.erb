@@ -6,8 +6,8 @@
 
 <p class="one"><h5 style="color:purple"><ol><% @search.each do |f| %>
 	<li>Constituency :<%= f.name %></br>
-		District:<%= f.district %></br>
-		State:<%= f.state %>
+		Category:<%= f.category %></br>
+		No.of MLA seats:<%= f.mla_constituencies %>
 	</li></br>
 		<% end %></ol>
 

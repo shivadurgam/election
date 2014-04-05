@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+=begin
 constituencies1 = Constituency.create(name: 'Kamareddy', district: 'Nizamabad', state: 'AP')
 constituencies2 = Constituency.create(name: 'Uppal', district: 'Rangareddy', state: 'AP')
 constituencies3 = Constituency.create(name: 'Hindupur', district: 'Anantapur', state: 'AP')
@@ -33,9 +33,34 @@ parties7 = Party.create(name: 'JSP', president: 'Kiran Kumar Reddy', established
 parties8 = Party.create(name: 'RJD', president: 'Lalu Prasad Yadav', established_year:'1995-09-22')
 parties9 = Party.create(name: 'CPI', president: 'Seetaram Yechuri', established_year:'1950-03-02')
 
+=end
+
+require 'open-uri'
+doc = Nokogiri::HTML(open("http://www.mapsofindia.com/parliamentaryconstituencies/andhrapradesh/"))
+doc2 = Nokogiri::HTML(open("http://en.wikipedia.org/wiki/List_of_constituencies_of_the_Lok_Sabha#Andhra_Pradesh_.2842.29"))
+puts 'test'
+
+doc.css('.tableizer-table')[0].css("tr")[1,42].each do |row|
+	columns = row.css("td")
+
+	#puts columns[1].text()
+	#puts columns[2].text()
+	Constituency.create(name: columns[1].text(), category: columns[2].text(), mla_constituencies: columns[3].text())
+
+end
 
 
 
 
+=begin
+require 'open-uri'
+url = "http://en.wikipedia.org/wiki/List_of_constituencies_of_the_Lok_Sabha#Andhra_Pradesh_.2842.29"
+doc = Nokogiri::HTML(open(url))
+puts 'test2'
 
+doc.css('.wikitable')[0].css("tr")[1,42].each do |row1|
+	columns = row1.css("td")
+	Constituency.create(mla_constituencies: columns[3].text())
+end
+=end
 

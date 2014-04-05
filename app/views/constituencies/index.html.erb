@@ -18,8 +18,8 @@ Search constituency by name:
 	<thead>
 		<tr>
 			<th>Constituency Name </th>
-			<th>District </th>
-			<th>State</th>
+			<th>Category </th>
+			<th>No.of MLA seats</th>
 			<th>Show Details</th>
 			<th>Edit Details</th>
 		</tr>
@@ -28,8 +28,8 @@ Search constituency by name:
 		<% @cons.each do |f| %>
 		<tr>
 			<td><%= f.name %></td>
-			<td><%= f.district %></td>
-			<td><%= f.state %></td>
+			<td><%= f.category %></td>
+			<td><%= f.mla_constituencies %></td>
 			<td><%= link_to ' Show  ', constituency_path(f) %></td>
 			<td><%= link_to ' Edit ', edit_constituency_path(f) %></td>
 		</tr>

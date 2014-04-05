@@ -7,5 +7,11 @@ class CreateConstituencies < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    change_table :constituencies do |t|
+    	t.rename :district, :category
+    	t.rename :state, :mla_constituencies
+    end
   end
+
 end

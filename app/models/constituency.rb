@@ -4,7 +4,7 @@ class Constituency < ActiveRecord::Base
 
 	def self.search(search)
 		if search
-			find(:all, :conditions => ['name LIKE ? OR district LIKE ?', "%#{search}%", "%#{search}%"])
+			find(:all, :conditions => ['name LIKE ? OR category LIKE ?', "%#{search}%", "%#{search}%"])
 		else
 			find(:all)
 		end

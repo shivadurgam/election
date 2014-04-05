@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321140103) do
+ActiveRecord::Schema.define(version: 20140404163216) do
 
   create_table "constituencies", force: true do |t|
     t.string   "name"
-    t.string   "district"
-    t.string   "state"
+    t.string   "category"
+    t.string   "mla_constituencies"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
